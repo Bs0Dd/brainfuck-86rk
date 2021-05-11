@@ -54,8 +54,8 @@ loop:
 	
 next:
 	inx hl
-	mov a, h
-	cpi 76h
+	mvi a, 76h
+	cmp h
 	jz memerr
 	ret
 
@@ -64,7 +64,7 @@ prev:
 	mvi a, 14h
 	cmp h
 	rnz
-	mvi a, 56h
+	mvi a, 57h
 	cmp l
 	rnz
 memerr:
@@ -187,7 +187,7 @@ crlf:
 
 title:
 	db 1fh,'ispolnitelx qzyka BRAINFUCK',0dh,0ah
-	db 'wersiq 1.3p',0dh,0ah,0ah,0
+	db 'wersiq 1.4p',0dh,0ah,0ah,0
 
 err:
 	db ':o{ibka - ',7,0

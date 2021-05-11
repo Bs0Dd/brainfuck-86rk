@@ -10,7 +10,7 @@ chksum  equ 0F82Ah
 	org 0h
 	lxi hl, title
 	call print
-	lxi hl, 237h
+	lxi hl, 228h
 clmem:	
 	inx hl
 	mvi m, 0
@@ -26,11 +26,12 @@ clmem:
 	lxi hl, panke
 	call print
 	call getch
-	lxi hl, 238h
+	lxi hl, 229h
 	call mgload
 	mov a, d
 	cpi 14h
-	cz bigprg
+	cz bigchk
+	jnc bigprg
 	push bc
 	call chksum
 	pop hl
@@ -46,7 +47,7 @@ clmem:
 	mvi c, 1Fh
 	call setch
 	lxi hl, 1458h
-	lxi de, 237h
+	lxi de, 228h
 	lxi bc, 0
 loop:
 	inx de
@@ -75,8 +76,8 @@ loop:
 	
 next:
 	inx hl
-	mov a, h
-	cpi 76h
+	mvi a, 76h
+	cmp h
 	jz memerr
 	ret
 
@@ -85,7 +86,7 @@ prev:
 	mvi a, 14h
 	cmp h
 	rnz
-	mvi a, 56h
+	mvi a, 57h
 	cmp l
 	rnz
 memerr:
@@ -210,10 +211,12 @@ noend:
 	call setch
 	jmp exit
 
-bigprg:
+bigchk:
+	mov a, e
 	cpi 57h
-	rnz
+	rc
 	inx sp
+bigprg:
 	lxi hl, err
 	call print
 	lxi hl, errbig
@@ -225,7 +228,7 @@ crlf:
 
 title:
 	db 1fh,'ispolnitelx qzyka BRAINFUCK',0dh,0ah
-	db 'wersiq 1.3k',0dh,0ah,0ah,0
+	db 'wersiq 1.4k',0dh,0ah,0ah,0
 
 ready:
 	db 'wstawxte kassetu i',0
@@ -239,15 +242,15 @@ errcyc:
 	db 'ovidalsq ',0
 
 errbig:
-	db 'programma welika',0
+	db 'mnogo koda',0
 
 errme:	
 	db 'wyhod za predely pamqti',0
 
 errld:
-	db 'kontr. summy ne sowpada`t',0	
+	db 'kontr. summy ne rawny',0	
 
 ldrdy:
-	db 'zagruzka zawer{ena.'
+	db 'zagruveno.'
 panke:
 	db ' navmite l`bu` klawi{u',0dh,0ah,0
