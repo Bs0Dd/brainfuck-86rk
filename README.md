@@ -1,4 +1,4 @@
-# Brainfuck на Радио-86РК
+# Brainfuck для Радио-86РК
 
 ![title](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/bfon86rk.png)
 
