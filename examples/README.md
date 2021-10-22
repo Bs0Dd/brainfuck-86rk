@@ -30,7 +30,7 @@
 
 ![factor](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/factor2.png)
 
-Источник: http://progopedia.ru/example/factorial/63
+Источник: https://cpp.mazurok.com/tag/brainfuck
 
 ## fibo.rk
 
