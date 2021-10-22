@@ -24,6 +24,14 @@
 
 Источник: http://progopedia.ru/example/factorial/63
 
+## factor2.rk
+
+Программа вычисляет факториал, может рассчитывать даже очень большие числа (но требует много времени)
+
+![factor](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/factor2.png)
+
+Источник: http://progopedia.ru/example/factorial/63
+
 ## fibo.rk
 
 Программа вычисляет числа из ряда фибоначчи до 13 включительно (дальше переполнение 8-битной ячейки)
@@ -31,6 +39,14 @@
 ![fibo](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/fibo.png)
 
 Источник: http://progopedia.ru/example/fibonacci/62
+
+## fibo2.rk
+
+Программа вычисляет числа из ряда фибоначчи, может рассчитывать даже очень большие числа (но требует много времени)
+
+![fibo](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/fibo2.png)
+
+Источник: https://cpp.mazurok.com/tag/brainfuck
 
 ## hello.rk
 
