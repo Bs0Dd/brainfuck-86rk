@@ -1,4 +1,4 @@
-English | [Русский](https://github.com/Bs0Dd/brainfuck-86rk/blob/main/README_ru_RU.md)
+English | [Русский](https://github.com/Bs0Dd/brainfuck-86rk/blob/main/README-ru_RU.md)
 
 # Brainfuck for Radio-86RK
 
