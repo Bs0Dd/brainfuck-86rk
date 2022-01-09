@@ -1,8 +1,8 @@
-[English](https://github.com/Bs0Dd/magma-8080/blob/main/README.md) | Русский
+[English](https://github.com/Bs0Dd/brainfuck-86rk/blob/main/README.md) | Русский
 
 # Brainfuck для Радио-86РК
 
-![title](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/bfon86rk.png)
+![title](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/bfon86rk.png)
 
 Наверняка те радиолюбители, что жили в СССР, слышали (а кто-то даже собирал) о домашнем 8-битном компьютере [Радио-86РК](https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE-86%D0%A0%D0%9A). Компьютер был довольно прост в изготовлении и потому получил большую популярность.  
 Работает он на процессоре КР580ВМ80А (клон Intel 8080A), имеет Ч/Б видеосистему на КР580ВГ75 (клон Intel 8275), 32Кб ОЗУ и способен загружать/выгружать данные на аудиоустройство. Поэтому ничего не мешает выполнять на нем Brainfuck.
@@ -46,14 +46,14 @@
 
 * После запуска, вместо, например "Hello World!", на дисплее показывается странный "HЕЛЛО WОРЛД!".
 
-   ![letters](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/hello.png)
+   ![letters](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/hello.png)
 	  
    Данная проблема связана с устройством видеоконтроллера. Его знакогенератор рассчитан на 128 символов, поэтому для умещения руссих букв из него были убраны маленькие английские и заменены их фонетическими аналогами в русском языке.  
    Исправить данное положение можно, переписав программу под вывод текста заглавными английскими буквами, например "HELLO WORLD!"
 	  
 * Текст при печати "разбросан" по дисплею
 
-   ![nolf](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/nolf.png)
+   ![nolf](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/nolf.png)
 	  
    Скорее всего Brainfuck код для перехода на следующую строку печатает только символ LF (**0x0A**), поскольку в современных системах он выполняет и переход на новую строку и перенос курсора в ее начало. В данном компьютере такого нет, поэтому для переноса курсора в начало необходимо напечатать символ CR (**0x0D**).  
    Для исправления этой проблемы достаточно в коде, после каждой команды, выводящей LF, добавить строчку `+++.---`. Тогда после LF сразу будет выводиться CR и проблемы с переносом не будет.

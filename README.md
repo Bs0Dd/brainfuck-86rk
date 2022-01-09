@@ -1,8 +1,8 @@
-English | [Русский](https://github.com/Bs0Dd/magma-8080/blob/main/README.md)
+English | [Русский](https://github.com/Bs0Dd/brainfuck-86rk/blob/main/README_ru_RU.md)
 
 # Brainfuck for Radio-86RK
 
-![title](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/bfon86rk.png)
+![title](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/bfon86rk.png)
 
 Surely those radio amateurs who lived in the USSR heard (and someone even collected) about the home 8-bit computer [Radio-86RK](https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE-86%D0%A0%D0%9A). The computer was quite simple to manufacture and therefore gained great popularity.  
 It works on the KR580VM80A processor (Intel 8080A clone), has a B/W video system on the KR580VG75 (Intel 8275 clone), 32Kb of RAM and is capable of loading/saving data to an audio device. Therefore, nothing prevents you from performing Brainfuck on it.
@@ -46,14 +46,14 @@ It is possible that separate branches with versions for them will be created for
 
 * After starting, instead of, for example, "Hello World!", The display shows a strange "HЕЛЛО WОРЛД!".
 
-   ![letters](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/hello.png)
+   ![letters](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/hello.png)
 	  
    This problem is related to the video controller device. Its character generator is designed for 128 characters, therefore, to fit Russian letters, small English letters were removed from it and replaced by their phonetic counterparts in Russian.  
    This situation can be corrected by rewriting the program to display the text in capital English letters, for example, "HELLO WORLD!"
 	  
 * Printing text is "scattered" across the display
 
-   ![nolf](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/nolf.png)
+   ![nolf](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/nolf.png)
 	  
    Most likely the Brainfuck code to go to the next line prints only the LF character (**0x0A**), since on modern systems it performs a newline and move the cursor to the beginning. This is not the case on this computer, so to move the cursor to the beginning, you need to type CR (**0x0D**).  
    To fix this problem, it is enough to add the line `+++ .---` after each command that outputs LF in the code. Then, after LF, CR will be displayed immediately and there will be no problems with the line feed.
