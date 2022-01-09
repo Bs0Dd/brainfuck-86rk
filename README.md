@@ -1,73 +1,75 @@
-# Brainfuck для Радио-86РК
+English | [Русский](https://github.com/Bs0Dd/magma-8080/blob/main/README.md)
+
+# Brainfuck for Radio-86RK
 
 ![title](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/bfon86rk.png)
 
-Наверняка те радиолюбители, что жили в СССР, слышали (а кто-то даже собирал) о домашнем 8-битном компьютере [Радио-86РК](https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE-86%D0%A0%D0%9A). Компьютер был довольно прост в изготовлении и потому получил большую популярность.  
-Работает он на процессоре КР580ВМ80А (клон Intel 8080A), имеет Ч/Б видеосистему на КР580ВГ75 (клон Intel 8275), 32Кб ОЗУ и способен загружать/выгружать данные на аудиоустройство. Поэтому ничего не мешает выполнять на нем Brainfuck.
+Surely those radio amateurs who lived in the USSR heard (and someone even collected) about the home 8-bit computer [Radio-86RK](https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE-86%D0%A0%D0%9A). The computer was quite simple to manufacture and therefore gained great popularity.  
+It works on the KR580VM80A processor (Intel 8080A clone), has a B/W video system on the KR580VG75 (Intel 8275 clone), 32Kb of RAM and is capable of loading/saving data to an audio device. Therefore, nothing prevents you from performing Brainfuck on it.
 
-## Версии исполнителя
-Исполнитель существует в двух версиях: "К" и "П".  
- * Версия "К" (Кассета) после запуска, с помощью загрузчика в ROM-BIOS, загружает Brainfuck код в память, а затем выполняет его.
- * Версия "П" (Память) предполагает, что пользователь каким-либо образом уже расположил Brainfuck код в памяти, начиная с адреса **0x019A**, и сразу выполняет его.
+## Interpreter versions
+The interpreter exists in two versions: "К" and "П".  
+ * Version "К" (Cassette) after startup, using the bootloader in the ROM-BIOS, loads the Brainfuck code into memory and then executes it.
+ * Version "П" (Memory) assumes that the user has somehow already placed the Brainfuck code in memory, starting at address **0x019A**, and immediately executes it.
 
-## Адресные данные
-Для Brainfuck программы выделяется 25000 8-битных ячеек (стандартные 30000 невозможно выделить ввиду всего 32Кб ОЗУ)    
-	Адреса: **0x1458-0x75FF**  
-Для Brainfuck кода выделяется: в "К" версии - 4655 байт, в "П" версии - 4798 байт  
-	Адреса:	**0x0229-0x1457** или **0x019A-0x1457**  
-Сам исполнитель занимает: в "К" версии - 553 байт, в "П" версии - 410 байт  
-	Адреса:	**0x0000-0x0228** или **0x0000-0x0199**
+## Address data
+For Brainfuck programs, 25000 8-bit cells are allocated (the standard 30,000 cannot be allocated due to only 32KB of RAM)  
+	Addresses: **0x1458-0x75FF**  
+For Brainfuck the code is allocated: in the "К" version - 4655 bytes, in the "П" version - 4798 bytes  
+	Addresses:	**0x0229-0x1457** or **0x019A-0x1457**  
+The interpreter occupies: in the "К" version - 553 bytes, in the "П" version - 410 bytes  
+	Addresses:	**0x0000-0x0228** or **0x0000-0x0199**
 
-## Особенности
-* Исполнитель способен сообщать о базовых ошибках, произошедших при загрузке или выполнении Brainfuck кода.
- Программа остановится если: при загрузке кода с кассеты не совпали контрольные суммы; файл с кассеты слишком большой; указатель на ячейку вышел за пределы отведенной памяти; в коде нет скобки открывающей/закрывающей цикл.
+## Peculiarities
+* The performer is able to report basic errors that occurred while loading or executing Brainfuck code.
+ The program will stop if: when loading the code from the cassette, the checksums did not match; the file from the cassette is too large; the pointer to the cell has gone out of the allocated memory; there is no opening/closing bracket in the code.
 
-* Любой Brainfuck код должен заканчиваться байтом **0x00**, обозначающим конец кода.
+* Any Brainfuck code must end with a **0x00** byte indicating the end of the code.
 
-* Если Brainfuck код запрашивает ввод символа, на новой строке появится знак ">". После нажатия клавиши символ выведется на экран и будет передан коду. 
+* If the Brainfuck code asks for a character, a ">" sign will appear on a new line. After pressing the key, the character will be displayed and transferred to the code.
 
-## Работа на клонах
-Существует много клонов и частично совместимых с Радио-86РК компьютеров.
-Работа проверена на следующих клонах (с помощью эмулятора):
-* Спектр-001
-* Апогей БК-01
+## Working on clones
+There are many clones and partially compatible computers with Radio-86RK.
+The work has been tested on the following clones (using an emulator):
+* Spectr-001
+* Apogee BK-01
 
-Не работоспособен на:
-* Микроша (другая система подсчета контр. суммы, другие адреса подпрограмм загрузчика и возврата в монитор)
-* Микро-80 (нет подсчета контр. суммы, другие адреса подпрограмм загрузчика и возврата в монитор)
-* Партнер 01.01 (другие адреса подпрограмм загрузчика и возврата в монитор)
-* ЮТ-88 (другая система подсчета контр. суммы, другие адреса подпрограмм загрузчика и возврата в монитор)
+Not workable on:
+* Microsha (another system for calculating checksum, other addresses of the bootloader routines and return to the monitor)
+* Micro-80 (no checksum calculation, other addresses of bootloader routines and return to monitor)
+* Partner 01.01 (other addresses of bootloader routines and return to monitor)
+* UT-88 (another system for calculating checksum, other addresses of the bootloader routines and return to the monitor)
 
-Возможно для этих компьютеров будут созданы отдельные ветки с версиями для них (мне пока не известны правильные адреса).
+It is possible that separate branches with versions for them will be created for these computers (I do not know the correct addresses yet).
 
 ## FAQ
 
-* После запуска, вместо, например "Hello World!", на дисплее показывается странный "HЕЛЛО WОРЛД!".
+* After starting, instead of, for example, "Hello World!", The display shows a strange "HЕЛЛО WОРЛД!".
 
    ![letters](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/hello.png)
 	  
-   Данная проблема связана с устройством видеоконтроллера. Его знакогенератор рассчитан на 128 символов, поэтому для умещения руссих букв из него были убраны маленькие английские и заменены их фонетическими аналогами в русском языке.  
-   Исправить данное положение можно, переписав программу под вывод текста заглавными английскими буквами, например "HELLO WORLD!"
+   This problem is related to the video controller device. Its character generator is designed for 128 characters, therefore, to fit Russian letters, small English letters were removed from it and replaced by their phonetic counterparts in Russian.  
+   This situation can be corrected by rewriting the program to display the text in capital English letters, for example, "HELLO WORLD!"
 	  
-* Текст при печати "разбросан" по дисплею
+* Printing text is "scattered" across the display
 
    ![nolf](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/master/pictures/nolf.png)
 	  
-   Скорее всего Brainfuck код для перехода на следующую строку печатает только символ LF (**0x0A**), поскольку в современных системах он выполняет и переход на новую строку и перенос курсора в ее начало. В данном компьютере такого нет, поэтому для переноса курсора в начало необходимо напечатать символ CR (**0x0D**).  
-   Для исправления этой проблемы достаточно в коде, после каждой команды, выводящей LF, добавить строчку `+++.---`. Тогда после LF сразу будет выводиться CR и проблемы с переносом не будет.
+   Most likely the Brainfuck code to go to the next line prints only the LF character (**0x0A**), since on modern systems it performs a newline and move the cursor to the beginning. This is not the case on this computer, so to move the cursor to the beginning, you need to type CR (**0x0D**).  
+   To fix this problem, it is enough to add the line `+++ .---` after each command that outputs LF in the code. Then, after LF, CR will be displayed immediately and there will be no problems with the line feed.
    
 ## Changelog
-* Версия 1.4
-   * Уменьшен размер "К" версии
-   * Исправлен баг в системе остановки при ошибке
-   * Исправлен критический баг, ломающий выполнение команд при адресе текущей ячейки от **0x2B00**.
-* Версия 1.3
-   * Первая публичная версия.
-   * Исправлен критический баг, при некоторых обстоятельствах приводящий к зависанию программы.
-* Версия 1.2
-   * Исполнитель больше не хранит адрес конца Brainfuck кода, а останавливается по достижении символа **0x00**. Это позволило упростить программу и еще немного уменьшить размер.
-   * Разделение на версии "К" и "П".
-* Версия 1.1
-   * Оптимизирован и уменьшен код.
-* Версия 1.0
-   * Первая версия, непубличная.
+* Version 1.4
+   * Reduced the size of the "К" version
+   * Fixed a bug in the stop on error system
+   * Fixed a critical bug that breaks command execution when the address of the current cell is from **0x2B00**.
+* Version 1.3
+   * First public version.
+   * Fixed a critical bug that, in some circumstances, leads to the program freezing.
+* Version 1.2
+   * The performer no longer stores the address of the end of the Brainfuck code, but stops when it reaches the **0x00** character. This allowed to simplify the program and reduce the size.
+   * Division into versions "К" and "П".
+* Version 1.1
+   * Optimized and minified code.
+* Version 1.0
+   * First version, non-public.
