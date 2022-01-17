@@ -8,6 +8,8 @@ A small collection of demo programs in RK format (cassette file).
 Программа выводит строчки из американской песенки "99 Bottles of Beer"  
 The program displays lines from the American song "99 Bottles of Beer"
 
+[Run online](https://rk86.ru/index.html?file=https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/examples/rk86.ru-snap/beer.json)
+
 ![beer](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/beer.png)
 
 Источник / Source: http://esoteric.sange.fi/brainfuck/bf-source/prog/99botles.bf
@@ -17,12 +19,16 @@ The program displays lines from the American song "99 Bottles of Beer"
 Программа выводит строку "BRAINFUCK НА РАДИО-86РК" (ASCII - "BRAINFUCK na radio-86rk")  
 The program outputs the string "BRAINFUCK НА РАДИО-86РК" (ASCII - "BRAINFUCK na radio-86rk")
 
+[Run online](https://rk86.ru/index.html?file=https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/examples/rk86.ru-snap/bfon86rk.json)
+
 ![bfon86rk](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/bfon86rk.png)
 
 ## factor.rk
 
 Программа вычисляет факториал до 5 включительно (дальше переполнение 8-битной ячейки)  
 The program calculates factorial up to 5 inclusive (further overflow of 8-bit cell)
+
+[Run online](https://rk86.ru/index.html?file=https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/examples/rk86.ru-snap/factor.json)
 
 ![factor](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/factor.png)
 
@@ -33,7 +39,9 @@ The program calculates factorial up to 5 inclusive (further overflow of 8-bit ce
 Программа вычисляет факториал, может рассчитывать даже очень большие числа (но требует много времени)  
 The program calculates factorial, can calculate even very large numbers (but takes a lot of time)
 
-![factor](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/factor2.png)
+[Run online](https://rk86.ru/index.html?file=https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/examples/rk86.ru-snap/factor2.json)
+
+![factor2](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/factor2.png)
 
 Источник / Source: https://cpp.mazurok.com/tag/brainfuck
 
@@ -41,6 +49,8 @@ The program calculates factorial, can calculate even very large numbers (but tak
 
 Программа вычисляет числа из ряда фибоначчи до 13 включительно (дальше переполнение 8-битной ячейки)  
 The program calculates numbers from the fibonacci sequence up to 13 inclusive (further overflow of 8-bit cell)
+
+[Run online](https://rk86.ru/index.html?file=https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/examples/rk86.ru-snap/fibo.json)
 
 ![fibo](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/fibo.png)
 
@@ -51,7 +61,9 @@ The program calculates numbers from the fibonacci sequence up to 13 inclusive (f
 Программа вычисляет числа из ряда фибоначчи, может рассчитывать даже очень большие числа (но требует много времени)  
 The program calculates numbers from the fibonacci sequence, can calculate even very large numbers (but takes a lot of time)
 
-![fibo](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/fibo2.png)
+[Run online](https://rk86.ru/index.html?file=https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/examples/rk86.ru-snap/fibo2.json)
+
+![fibo2](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/fibo2.png)
 
 Источник / Source: https://cpp.mazurok.com/tag/brainfuck
 
@@ -59,6 +71,8 @@ The program calculates numbers from the fibonacci sequence, can calculate even v
 
 Программа, с которой обычно начинают программисты. Выводит на экран строку "Hello World!"  
 A program that programmers usually start with. Displays the string "Hello World!"
+
+[Run online](https://rk86.ru/index.html?file=https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/examples/rk86.ru-snap/hello.json)
 
 ![hello](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/hello.png)
 
@@ -69,6 +83,8 @@ A program that programmers usually start with. Displays the string "Hello World!
 Программа-куайн. Выводит свой код на дисплей.  
 Quine program. Displays his code.
 
+[Run online](https://rk86.ru/index.html?file=https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/examples/rk86.ru-snap/quine.json)
+
 ![quine](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/quine.png)
 
 Источник / Source: https://vk.com/topic-19365371_23136468?post=10
@@ -77,6 +93,8 @@ Quine program. Displays his code.
 
 Программа вычисляет число Пи с точностью в три знака после запятой (дальше переполнение 8-битной ячейки)  
 The program calculates the number Pi with an accuracy of three decimal places (further overflow of 8-bit cell)
+
+[Run online](https://rk86.ru/index.html?file=https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/examples/rk86.ru-snap/yapi.json)
 
 ![yapi](https://raw.githubusercontent.com/Bs0Dd/brainfuck-86rk/main/pictures/yapi.png)
 
